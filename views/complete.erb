@@ -39,10 +39,9 @@
         <p>ありがとうございました。送信を受け付けました。</p>
         <p>3営業日以内をめどにご返信いたしますので、しばらくお待ちください。</p>
     
+        <h4>送信内容</h4>
+       
     <table class="table">
-        <tr>
-            <h2>送信内容</h2>
-        </tr>
         <tr>
             <th class="text-left">会社名</th>
             <% company = params['company'] %>
@@ -66,6 +65,7 @@
         <tr>
             <th class="text-left">内容</th>
             <% content = params['content'] %>
+            <% content = content.gsub(/\r\n|\r|\n/, "<br>") %>
             <td class="text-left"><%= content %></td>
         </tr>
     </table>   
